@@ -32,5 +32,11 @@ function QBScore(stats) {
     let rushingFumbleScore = stats.rushing.fumble * turnover
 
     return passingTouchdownScore + passingYardScore + rushingTouchdownScore + rushingYards + interceptionScore + rushingFumbleScore
-    
+
+}
+
+function RBScore(stats) {
+    let rushingYardScore = stats.rushing.yards / 25
+    let rushingTouchdownScore = stats.rushing.touchdown * td
+    let 
 }
