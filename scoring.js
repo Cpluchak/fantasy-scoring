@@ -3,16 +3,16 @@ function calculateScore(player) {
 
   switch (player.position) {
     case ('QB'):
-      score = calculateQBScore(player.stats)
+      score = QBScore(player.stats)
       break
     case ('RB'):
-      score = calculateRBScore(player.stats)
+      score = RBScore(player.stats)
       break
     case ('WR'):
-      score = calculateWRScore(player.stats)
+      score = WRScore(player.stats)
       break
     case ('TE'):
-      score = calculateTEScore(player.stats)
+      score = TEScore(player.stats)
       break
   }
 
@@ -23,3 +23,14 @@ const td = 6
 const turnover = -3
 const received = 1
 
+function QBScore(stats) {
+    let passingYardScore = stats.passing.yards / 25
+    let passingTouchdownScore = stats.passing.touchdowns * td
+    let rushingYards = stats.rushing.yards / 10
+    let rushingTouchdownScore = stats.rushing.touchdowns * td
+    let interceptionScore = stats.passing.interceptions * turnover
+    let rushingFumbleScore = stats.rushing.fumble * turnover
+
+    return passingTouchdownScore + passingYardScore + rushingTouchdownScore + rushingYards + interceptionScore + rushingFumbleScore
+    
+}
