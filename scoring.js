@@ -42,14 +42,14 @@ function QBScore(stats) {
 //RBscore function
 function RBScore(stats) {
     let rushingYardScore = stats.rushing.yards / 25
-    let rushingTouchdownScore = stats.rushing.touchdown * td
+    let rushingTouchdownScore = stats.rushing.touchdowns * td
     let receptionScore = stats.recieving.receptions * recieved
     let recievingYardsScore = stats.recieving.yards / 10
     let recievingTouchdownScore = stats.recieving.touchdowns * td
-    let kickreturnTouchdownScore = stats.kickreturn.touchdown * td
+    let kickreturnTouchdownScore = stats.kickreturn.touchdowns * td
     let kickreturnYardsScore = stats.kickreturn.yards / 15
     let puntreturnYardsScore = stats.puntreturn.yards / 15
-    let puntreturnTouchdownScore = stats.puntreturn.touchdown * td
+    let puntreturnTouchdownScore = stats.puntreturn.touchdowns * td
     let rushingFumbleScore =  stats.rushing.fumble * turnover
     let recievingFumbleScore = stats.recieving.fumble * turnover
     let kickreturnFumbleScore = stats.kickreturn.fumble * turnover
@@ -59,3 +59,25 @@ function RBScore(stats) {
     kickreturnTouchdownScore + kickreturnYardsScore + puntreturnYardsScore + puntreturnTouchdownScore + rushingFumbleScore +
     recievingFumbleScore + kickreturnFumbleScore + puntreturnFumbleScore
 }
+
+//WRscore function
+function WRscore(stats) {
+    let rushingYardScore = stats.rushing.yards / 10
+    let rushingTouchdownScore = stats.rushing.touchdowns * td
+    let receptionScore = stats.recieving.receptions * recieved
+    let recievingYardsScore = stats.recieving.yards / 10
+    let recievingTouchdownScore = stats.recieving.touchdowns * td
+    let kickreturnYardsScore = stats.kickreturn.yards / 15
+    let kickreturnTouchdownScore = stats.kickreturn.touchdowns * td
+    let puntreturnYardsScore = stats.puntreturn.yards / 15
+    let puntreturnTouchdownScore = stats.puntreturn.touchdowns * td
+    let rushingFumbleScore = stats.rushing.fumbles * turnover
+    let recievingFumbleScore = stats.recieving.fumbles * turnover
+    let kickreturnFumbleScore = stats.kickreturn.fumbles * turnover
+    let puntreturnFumbleScore = stats.puntreturn.fumbles * turnover
+
+    return rushingYardScore + rushingTouchdownScore + receptionScore + recievingYardsScore + recievingTouchdownScore +
+    kickreturnYardsScore + kickreturnTouchdownScore + puntreturnYardsScore + puntreturnTouchdownScore + rushingFumbleScore +
+    recievingFumbleScore + kickreturnFumbleScore + puntreturnFumbleScore
+}
+
