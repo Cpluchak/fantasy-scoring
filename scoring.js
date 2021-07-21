@@ -23,7 +23,7 @@ function calculateScore(player) {
 //default variables
 const td = 6
 const turnover = -3
-const received = 1
+const recieved = 1
 
 //QBscore function
 function QBScore(stats) {
