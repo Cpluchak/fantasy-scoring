@@ -61,7 +61,7 @@ function RBScore(stats) {
 }
 
 //WRscore function
-function WRscore(stats) {
+function WRScore(stats) {
     let rushingYardScore = stats.rushing.yards / 10
     let rushingTouchdownScore = stats.rushing.touchdowns * td
     let receptionScore = stats.recieving.receptions * recieved
@@ -82,7 +82,7 @@ function WRscore(stats) {
 }
 
 //TEscore function
-function TEscore(stats) {
+function TEScore(stats) {
     let receptionScore = stats.recieving.receptions * recieved
     let recievingYardsScore = stats.recieving.yards / 10
     let recievingTouchdownScore = stats.recieving.touchdowns * td
@@ -91,3 +91,4 @@ function TEscore(stats) {
     return receptionScore + recievingYardsScore + recievingTouchdownScore + recievingFumbleScore
 }
 
+module.exports = calculateScore
