@@ -81,3 +81,13 @@ function WRscore(stats) {
     recievingFumbleScore + kickreturnFumbleScore + puntreturnFumbleScore
 }
 
+//TEscore function
+function TEscore(stats) {
+    let receptionScore = stats.recieving.receptions * recieved
+    let recievingYardsScore = stats.recieving.yards / 10
+    let recievingTouchdownScore = stats.recieving.touchdowns * td
+    let recievingFumbleScore = stats.recieving.fumbles * turnover
+
+    return receptionScore + recievingYardsScore + recievingTouchdownScore + recievingFumbleScore
+}
+
