@@ -1,3 +1,4 @@
+//switch case player function
 function calculateScore(player) {
   let score = 0
 
@@ -19,10 +20,12 @@ function calculateScore(player) {
   return score
 }
 
+//default variables
 const td = 6
 const turnover = -3
 const received = 1
 
+//QBscore function
 function QBScore(stats) {
     let passingYardScore = stats.passing.yards / 25
     let passingTouchdownScore = stats.passing.touchdowns * td
@@ -31,12 +34,28 @@ function QBScore(stats) {
     let interceptionScore = stats.passing.interceptions * turnover
     let rushingFumbleScore = stats.rushing.fumble * turnover
 
-    return passingTouchdownScore + passingYardScore + rushingTouchdownScore + rushingYards + interceptionScore + rushingFumbleScore
+    return passingTouchdownScore + passingYardScore + rushingTouchdownScore + rushingYards + interceptionScore + 
+    rushingFumbleScore
 
 }
 
+//RBscore function
 function RBScore(stats) {
     let rushingYardScore = stats.rushing.yards / 25
     let rushingTouchdownScore = stats.rushing.touchdown * td
-    let 
+    let receptionScore = stats.recieving.receptions * recieved
+    let recievingYardsScore = stats.recieving.yards / 10
+    let recievingTouchdownScore = stats.recieving.touchdowns * td
+    let kickreturnTouchdownScore = stats.kickreturn.touchdown * td
+    let kickreturnYardsScore = stats.kickreturn.yards / 15
+    let puntreturnYardsScore = stats.puntreturn.yards / 15
+    let puntreturnTouchdownScore = stats.puntreturn.touchdown * td
+    let rushingFumbleScore =  stats.rushing.fumble * turnover
+    let recievingFumbleScore = stats.recieving.fumble * turnover
+    let kickreturnFumbleScore = stats.kickreturn.fumble * turnover
+    let puntreturnFumbleScore = stats.puntreturn.fumble * turnover
+
+    return rushingYardScore + rushingTouchdownScore + receptionScore + recievingYardsScore + recievingTouchdownScore + 
+    kickreturnTouchdownScore + kickreturnYardsScore + puntreturnYardsScore + puntreturnTouchdownScore + rushingFumbleScore +
+    recievingFumbleScore + kickreturnFumbleScore + puntreturnFumbleScore
 }
